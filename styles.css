@@ -209,3 +209,44 @@ h1 {
 }
 
 /* Other existing styles */
+.modal-wrapper {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #254642d9;
+  box-sizing: border-box;
+  cursor: auto;
+  opacity: 1;
+  overflow-y: auto;
+  padding: 50px 0;
+  transition: 0.3s;
+  z-index: 100;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.modal-container {
+  background-color: #001020;
+  border-radius: 5px;
+  margin: auto;
+  max-width: 700px;
+  min-width: 300px;
+  position: relative;
+  padding: 20px;
+  color: #fff;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: #62f5c8;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}

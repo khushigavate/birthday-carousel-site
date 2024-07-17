@@ -267,3 +267,39 @@ document.ontouchstart = evt => birthday.onClick(evt);
     then = now;
     birthday.update(delta / 1000);
 })();
+
+// modal window
+document.addEventListener("click", (e) => {
+  if (e.target.closest(`[data-action="openModal"]`)) {
+    const html = document.querySelector(`textarea`).value;
+    openModal(html);
+  }
+  if (
+    e.target.closest(`[data-action="closeModal"]`) ||
+    e.target.classList.contains("modal-wrapper")
+  ) {
+    closeModal();
+  }
+});
+function openModal(html) {
+  const modal = `
+      <div class="modal-wrapper">
+          <div class="modal-container">
+            <button class="modal-close" data-action="closeModal">
+              <svg viewBox="0 0 20 20" width="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 2 2 L 18 18" stroke-width="3" fill="transparent"></path>
+                <path d="M 18 2 L 2 18" stroke-width="3" fill="transparent"></path>
+              </svg>
+            </button>
+            ${html}
+          </div>
+      </div>`;
+  document.querySelector("body").insertAdjacentHTML("beforeend", modal);
+  document.querySelector("body").style.overflow = "hidden";
+}
+function closeModal() {
+  if (document.querySelector(".modal-wrapper"))
+    document.querySelectorAll(".modal-wrapper").forEach((el) => el.remove());
+  document.querySelector("body").style.overflow = "";
+}
+openModal(document.querySelector(`textarea`).value);
