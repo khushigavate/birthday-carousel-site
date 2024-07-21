@@ -193,13 +193,6 @@ h1 {
   position: absolute;
 }
 
-/* #ground {
-  position: absolute;
-  width: 720px; /* radius * 3 */
-  /* height: 720px; /* radius * 3 */
-  /* background: #333;
-  bottom: 0;
-} */ */ */
 
 #music-container {
   position: absolute;
@@ -230,12 +223,12 @@ h1 {
 }
 .modal-container {
   background-color: #001020;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: auto;
   max-width: 700px;
-  min-width: 300px;
+  min-width: 230px;
   position: relative;
-  padding: 20px;
+  padding: 30px;
   color: #fff;
 }
 .modal-close {
