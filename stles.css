@@ -1,13 +1,49 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff007f, #ff6f00, #ffeb00, #00e676, #00b0ff, #6200ea, #d500f9, #c51162);
+  background-size: 600% 600%;
+  animation: gradient 15s ease infinite;
+  overflow: hidden;
+  position: relative; /* Needed for absolute positioning of effects */
+}
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
 
+.effect {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.4); /* Translucent for a watery effect */
+  transform: scale(0);
+  animation: ripple 2s ease-out forwards;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
 
-
-
-
-
-
-
-
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.7;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.5;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.3);
+  }
+}
 
 
 
@@ -44,7 +80,7 @@
   }
   
   .container {
-    color: #333;
+    color: #020202;
     margin: 0 auto;
     text-align: center;
   }
@@ -91,3 +127,4 @@
       font-size: calc(3.375rem * var(--smaller));
     }
   }
+  

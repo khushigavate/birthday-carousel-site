@@ -46,3 +46,4 @@
 
 // Run this function first if the counter is not running
 countdownTimer();
+
